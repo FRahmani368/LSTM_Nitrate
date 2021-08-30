@@ -1,0 +1,84 @@
+{
+    "out": "G:\\Farshid\\GitHub\\Gourab\\LSTM_temp2\\TempDemo\\FirstRun\\epochs2_batch24_rho120_hiddensize50_Tstart20120101_Tend20190701_0\\All-2010-2016",
+    "data": {
+        "name": "hydroDL.data.camels.DataframeCamels",
+        "subset": "All",
+        "varT": [
+            "Discharge_cfs",
+            "prcp(mm/day)",
+            "CornLands_ha",
+            "SoybeanLands_ha",
+            "OtherAgLands_ha",
+            "ForestLands_ha",
+            "UrbanLands_ha",
+            "FertilizerNTons",
+            "ManureNTons"
+        ],
+        "varC": [
+            "DRAIN_SQKM",
+            "ShallowArea_sqkm",
+            "DeepArea_sqkm",
+            "ExcessivelyDrainedArea_sqkm",
+            "WellDrainedArea_sqkm",
+            "PoorlyDrainedArea_sqkm",
+            "HydGrpAreaA_sqkm",
+            "HydGrpAreaB_sqkm",
+            "HydGrpAreaC_sqkm",
+            "HydGrpAreaD_sqkm",
+            "DominantKfactWS_value",
+            "DominantKfactArea_sqkm",
+            "1stDominantSolTexArea_sqkm",
+            "2ndDominantSolTexArea_sqkm"
+        ],
+        "target": [
+            "S",
+            "t",
+            "r",
+            "e",
+            "a",
+            "m",
+            "T",
+            "e",
+            "m",
+            "p"
+        ],
+        "tRange": [
+            20120101,
+            20190701
+        ],
+        "doNorm": [
+            true,
+            true
+        ],
+        "rmNan": [
+            true,
+            false
+        ],
+        "daObs": 0,
+        "damean": false,
+        "davar": "streamflow",
+        "dameanopt": 0,
+        "lckernel": null,
+        "fdcopt": false
+    },
+    "model": {
+        "name": "hydroDL.model.rnn.CudnnLstmModel",
+        "nx": 23,
+        "ny": 1,
+        "hiddenSize": 50,
+        "doReLU": true
+    },
+    "loss": {
+        "name": "hydroDL.model.crit.RmseLoss",
+        "prior": "gauss"
+    },
+    "train": {
+        "miniBatch": [
+            24,
+            120
+        ],
+        "nEpoch": 2,
+        "saveEpoch": 1,
+        "seed": 0
+    }
+}

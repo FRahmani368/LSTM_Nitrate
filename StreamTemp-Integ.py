@@ -42,7 +42,7 @@ for seed in Randomseed:
         # 0,1: do both at the same time
         # 1: train DI model
         # 2: test trained models
-        Action = [2]  # it was [0 , 1]
+        Action = [0, 2]  # it was [0 , 1]
         # Set hyperparameters for training or retraining
         EPOCH = 2
         BATCH_SIZE = b_list
